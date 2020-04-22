@@ -43,12 +43,24 @@ class MerchControl extends React.Component {
     }
     return (
       <React.Fragment>
-        {currentlyVisibleState}
-        <button onClick={this.handleClick}>{buttonText}</button>
-      </React.Fragment>
+        <div style={style1}>
+          {currentlyVisibleState}
+        </div>
+        <div style={style2}>
+          <button onClick={this.handleClick}>{buttonText}</button>
+        </div>
+      </React.Fragment>  
     );
   }
   
+}
+
+const style1 = {
+
+}
+
+const style2 = {
+  display: 'inlineBlock'
 }
 
 export default MerchControl;

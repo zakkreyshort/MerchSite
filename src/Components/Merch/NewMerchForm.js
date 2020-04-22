@@ -11,26 +11,32 @@ function NewMerchForm(props) {
   
   return (
     <React.Fragment>
-      <form onSubmit={handleNewMerchFormSubmission}>
-        <input
-          required
-          type='text'
-          name='name'
-          placeholder='Name of item' />
-        <input
-          required
-          type='text'
-          name='description'
-          placeholder='Description' />
-        <input
-          required
-          type='number'
-          name='quantity'
-          placeholder='Quantity' />
-        <button type='submit'>Add to merch list!</button>
-      </form>
+      <div style={styles}>
+        <form onSubmit={handleNewMerchFormSubmission}>
+          <input
+            required
+            type='text'
+            name='name'
+            placeholder='Name of item' /><br />
+          <input
+            required
+            type='text'
+            name='description'
+            placeholder='Description' /><br />
+          <input
+            required
+            type='number'
+            name='quantity'
+            placeholder='Quantity' /><br />
+          <button type='submit'>Add to merch list!</button>
+        </form>
+      </div>
     </React.Fragment>
   );
+}
+
+const styles = {
+  display: 'inlineBlock'
 }
 
 NewMerchForm.propTypes = {

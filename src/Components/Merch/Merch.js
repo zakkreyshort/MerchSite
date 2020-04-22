@@ -17,14 +17,21 @@ function Merch(props) {
     props.decreaseQuantity();
   }
 
+  const styledComponent = {
+      border: '2px black solid',
+      borderRadius: '15px',
+      maxWidth: '400px',
+      margin:'5px' 
+    }
+
   return (
-    <React.Fragment>
-      <h1>Item name: {props.name}</h1>
-      <h2>Description: {props.description}</h2>
-      <h2>{quantity}</h2>
+    <div style={styledComponent}>
+      <h2>Item name: {props.name}</h2>
+      <h4>Description: {props.description}</h4>
+      <h4>{quantity}</h4>
       <button onClick={handleDecreaseQuantity}>Add to cart</button>
       <button onClick={handleIncreaseQuantity}>Restock</button>
-    </React.Fragment>
+    </div>
   );
 }
 
