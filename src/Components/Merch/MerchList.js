@@ -4,6 +4,15 @@ import Merch from './Merch';
 import MerchControl from '.././MerchControl';
 
 function MerchList(props) {
+  
+  function increaseQuantity() {
+    props.increaseQuantityState();
+  }
+  
+  function decreaseQuantity(){
+    props.decreaseQuantityState();
+  }
+  
   return (
     <React.Fragment>
       {props.merchList.map((merch) =>
