@@ -8,7 +8,9 @@ function App() {
   return (
     <React.Fragment>
       <Header />
+      <hr/>
       <MerchControl />
+      <hr/>
       <Footer />
     </React.Fragment>
     );
