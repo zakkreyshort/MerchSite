@@ -23,6 +23,14 @@ class MerchControl extends React.Component {
     this.setState({masterMerchList: newMasterMerchList, visibleOnPage: false});
   }
 
+  // increaseQuantityState = () => {
+  //   this.setState
+  // }
+
+  // decreaseQuantityState = () => { 
+  //   this.setState
+  // }
+
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
