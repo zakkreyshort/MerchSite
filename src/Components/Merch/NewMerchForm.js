@@ -13,14 +13,17 @@ function NewMerchForm(props) {
     <React.Fragment>
       <form onSubmit={handleNewMerchFormSubmission}>
         <input
+          required
           type='text'
           name='name'
           placeholder='Name of item' />
         <input
+          required
           type='text'
           name='description'
           placeholder='Description' />
         <input
+          required
           type='number'
           name='quantity'
           placeholder='Quantity' />
