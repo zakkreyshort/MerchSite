@@ -8,7 +8,8 @@ class MerchControl extends React.Component {
     super(props);
     this.state = {
       masterMerchList: [],
-      visibleOnPage: false
+      visibleOnPage: false,
+      selectedMerch: null
     };
   }
 

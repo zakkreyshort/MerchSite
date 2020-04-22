@@ -10,7 +10,7 @@ function Merch(props) {
   }
 
   function handleDecreaseQuantity() {
-    props.increaseQuantity();
+    props.increaseQuantity({});
   }
 
   function handleIncreaseQuantity() {
@@ -25,6 +25,7 @@ function Merch(props) {
     }
 
   return (
+    
     <div style={styledComponent}>
       <h2>Item name: {props.name}</h2>
       <h4>Description: {props.description}</h4>
