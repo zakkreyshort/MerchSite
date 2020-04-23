@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from "prop-types";
 import Merch from './Merch';
-import MerchControl from '.././MerchControl';
 
 function MerchList(props) {
   
   return (
     <React.Fragment>
       {props.merchList.map((merch) =>
-      <Merch 
+      <Merch
+      whenRestockClicked={props.onClickingRestock} 
+      whenAddToCartClicked={props.onClickingAddToCart}
       whenMerchClicked={props.onClickingDelete}
       name={merch.name}
       description={merch.description}

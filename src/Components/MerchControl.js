@@ -57,7 +57,33 @@ class MerchControl extends React.Component {
       this.setState({masterMerchList: editedMasterMerchList, editing: false, selectedMerch: null});
   }
 
+  
+  handleRestock = (item) => {
+    const newMasterMerchList = this.state.masterMerchList.filter(merch => merch.id !== item.id);
+    const newMerchItem = {
+      name: item.name,
+      description: item.description,
+      quantity: parseInt(item.quantity) + 1,
+      id: item.id
+    }
+    const newerList = newMasterMerchList.concat(newMerchItem);
+    this.setState({masterMerchList: newerList});
+  }
+  
+  handleAddToCart = (item) => {
+    const newMasterMerchList = this.state.masterMerchList.filter(merch => merch.id !== item.id);
+    const newMerchItem = {
+      name: item.name,
+      description: item.description,
+      quantity: parseInt(item.quantity) - 1,
+      id: item.id
+    }
+    const newerList = newMasterMerchList.concat(newMerchItem);
+    this.setState({masterMerchList: newerList});
+  }
+  
   render(){
+    console.log(this.state.masterMerchList);
     let currentlyVisibleState = null;
     let buttonText = null;
     if (this.state.formVisibleOnPage) {
@@ -66,7 +92,9 @@ class MerchControl extends React.Component {
     } else {
       currentlyVisibleState = <MerchList merchList={this.state.masterMerchList} 
       onMerchSelection={this.handleChangingSelectedMerch}
-      onClickingDelete={this.handleDeletingMerch}/>;
+      onClickingDelete={this.handleDeletingMerch}
+      onClickingRestock={this.handleRestock}
+      onClickingAddToCart={this.handleAddToCart}/>;
       buttonText = "Add Merch"; 
     }
     return (
