@@ -9,14 +9,6 @@ function Merch(props) {
     quantity = <h4>Out of stock</h4>;
   }
 
-  function handleDecreaseQuantity() {
-    props.increaseQuantity({});
-  }
-
-  function handleIncreaseQuantity() {
-    props.decreaseQuantity();
-  }
-
   const styledComponent = {
       border: '2px black solid',
       borderRadius: '15px',
@@ -30,8 +22,9 @@ function Merch(props) {
       <h2>Item name: {props.name}</h2>
       <h4>Description: {props.description}</h4>
       <h4>{quantity}</h4>
-      <button onClick={handleDecreaseQuantity}>Add to cart</button>
-      <button onClick={handleIncreaseQuantity}>Restock</button>
+      {/* <button onClick={()=> onClickingDecrease(props.id)}>Add to cart</button>
+      <button onClick={()=> onClickingIncrease(props.id)}>Restock</button> */}
+      <button onClick={() => props.whenMerchClicked(props.id)}>Remove Item</button>
     </div>
   );
 }
@@ -39,7 +32,9 @@ function Merch(props) {
 Merch.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  quantity: PropTypes.number.isRequired
+  quantity: PropTypes.number.isRequired,
+  id: PropTypes.string,
+  whenMerchClicked: PropTypes.func
 };
 
 export default Merch;
